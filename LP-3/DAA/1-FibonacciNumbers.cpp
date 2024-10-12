@@ -43,7 +43,7 @@ int main() {
                 cout<<iterativeFibo(n)<<endl;
                 break;
             case 2:
-                cout<<recursiveFibo(n)<<endl;
+                cout<<recursiveFibo(n-1)<<endl;
                 break;
             case 3:
                 cout<<"Exitting the code..."<<endl;
