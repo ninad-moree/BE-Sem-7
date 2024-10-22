@@ -14,15 +14,15 @@ public class two_PageRank {
         int k = 1; // For Traversing
         int ITERATION_STEP = 1;
         InitialPageRank = 1 / totalNodes;
-        System.out.printf(" Total Number of Nodes :" + totalNodes + "\t Initial PageRank  of All Nodes :"
-                + InitialPageRank + "\n");
-        for (k = 1; k <= totalNodes; k++) {
+        System.out.printf(" Total Number of Nodes :" + totalNodes + "\t Initial PageRank  of All Nodes :" + InitialPageRank + "\n");
+
+        for (k = 1; k <= totalNodes; k++) 
             this.pagerank[k] = InitialPageRank;
-        }
+        
         System.out.printf("\n Initial PageRank Values , 0th Step \n");
-        for (k = 1; k <= totalNodes; k++) {
+        for (k = 1; k <= totalNodes; k++) 
             System.out.printf(" Page Rank of " + k + " is :\t" + this.pagerank[k] + "\n");
-        }
+        
         while (ITERATION_STEP <= 2) // Iterations
         {
             for (k = 1; k <= totalNodes; k++) {
@@ -35,9 +35,8 @@ public class two_PageRank {
                         k = 1;
                         OutgoingLinks = 0; // Count the Number of Outgoing Links for each ExternalNodeNumber
                         while (k <= totalNodes) {
-                            if (this.path[ExternalNodeNumber][k] == 1) {
+                            if (this.path[ExternalNodeNumber][k] == 1) 
                                 OutgoingLinks = OutgoingLinks + 1; // Counter for Outgoing Links
-                            }
                             k = k + 1;
                         }
                         this.pagerank[InternalNodeNumber] += TempPageRank[ExternalNodeNumber] * (1 / OutgoingLinks);
@@ -49,13 +48,13 @@ public class two_PageRank {
                 System.out.printf(" Page Rank of " + k + " is :\t" + this.pagerank[k] + "\n");
             ITERATION_STEP = ITERATION_STEP + 1;
         }
-        for (k = 1; k <= totalNodes; k++) {
+
+        for (k = 1; k <= totalNodes; k++) 
             this.pagerank[k] = (1 - DampingFactor) + DampingFactor * this.pagerank[k];
-        }
+        
         System.out.printf("\n Final Page Rank : \n");
-        for (k = 1; k <= totalNodes; k++) {
+        for (k = 1; k <= totalNodes; k++) 
             System.out.printf(" Page Rank of " + k + " is :\t" + this.pagerank[k] + "\n");
-        }
     }
 
     public static void main(String args[]) {
