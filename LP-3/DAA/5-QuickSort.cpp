@@ -24,6 +24,8 @@ void quickSort(vector<int>& arr, int low, int high) {
     }
 }
 
+/* ################# RANDOMISED QUICK SORT ################# */
+
 int randomPartition(vector<int>& arr, int low, int high) {
     int idx = rand() % (high - low + 1) + low;
 
