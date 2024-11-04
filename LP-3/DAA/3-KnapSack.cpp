@@ -9,7 +9,7 @@ bool compare(pair<int,double> a, pair<int,double> b) {
     return v1 > v2;
 }
 
-double greedyKnapSack(vector<pair<int, double>> weights, int& W) {
+double fractionalKnapSack(vector<pair<int, double>> weights, int& W) {
     sort(weights.begin(), weights.end(), compare);
 
     double ans = 0;
@@ -29,7 +29,7 @@ double greedyKnapSack(vector<pair<int, double>> weights, int& W) {
     return ans;
 }
 
-int dynamicProgrammingKnapsack(vector<int> price, vector<int> weights, int W) {
+int zeroOneKnapSack(vector<int> price, vector<int> weights, int W) {
     int n = price.size();
     vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
 
@@ -63,8 +63,8 @@ int main() {
     bool repeat = true;
     while(repeat) {
         cout<<"Menu"<<endl;
-        cout<<"1. Greedy Knapsack"<<endl;
-        cout<<"2. DP Knapsack"<<endl;
+        cout<<"1. Fractional Knapsack"<<endl;
+        cout<<"2. 0-1 Knapsack"<<endl;
         cout<<"3. Exit"<<endl;
 
         cout<<"Enter your choice:"<<flush;
@@ -77,7 +77,7 @@ int main() {
                     cin>>weights[i].first>>weights[i].second;
                 cout<<"Knapsack Capacity:";
                 cin>>W1;
-                cout<<greedyKnapSack(weights, W1)<<endl;
+                cout<<fractionalKnapSack(weights, W1)<<endl;
                 break;
             case 2:
                 cout<<"Price:"<<endl;
@@ -88,7 +88,7 @@ int main() {
                     cin>>weight[i];
                 cout<<"Knapsack Capacity:";
                 cin>>W2;
-                cout<<dynamicProgrammingKnapsack(price, weight, W2)<<endl;
+                cout<<zeroOneKnapSack(price, weight, W2)<<endl;
                 break;
             case 3:
                 cout<<"Exitting the code..."<<endl;
