@@ -44,6 +44,7 @@ void huffmanCode(vector<char> data, vector<int> freq, int size) {
     while(pq.size() != 1) {
         Node* leftNode = pq.top();
         pq.pop();
+        
         Node* rightNode = pq.top();
         pq.pop();
 
