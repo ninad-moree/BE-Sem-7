@@ -11,7 +11,6 @@ bool compare(pair<int,double> a, pair<int,double> b) {
 
 double fractionalKnapSack(vector<pair<int, double>> weights, int& W) {
     sort(weights.begin(), weights.end(), compare);
-
     double ans = 0;
 
     for(int i=0; i<weights.size(); i++) {

@@ -30,7 +30,6 @@ void quickSort(vector<int>& arr, int low, int high) {
 
 int randomPartition(vector<int>& arr, int low, int high) {
     int idx = rand() % (high - low + 1) + low;
-
     swap(arr[idx], arr[high]);
 
     int pivot = arr[high];
