@@ -2,7 +2,6 @@
 using namespace std;
 
 /* ################# QUICK SORT ################# */
-
 int partition(vector<int>& arr, int low, int high) {
     int pivot = arr[high];
     int i = low - 1;
@@ -27,7 +26,6 @@ void quickSort(vector<int>& arr, int low, int high) {
 }
 
 /* ################# RANDOMISED QUICK SORT ################# */
-
 int randomPartition(vector<int>& arr, int low, int high) {
     int idx = rand() % (high - low + 1) + low;
     swap(arr[idx], arr[high]);
